@@ -263,28 +263,28 @@ bool ServerConfig::isControlAuthEnabled()
 {
   AutoLock l(&m_objectCS);
 
-  return m_useControlAuth;
+  return false;
 }
 
 void ServerConfig::useControlAuth(bool useAuth)
 {
   AutoLock l(&m_objectCS);
 
-  m_useControlAuth = useAuth;
+  m_useControlAuth = false;
 }
 
 bool ServerConfig::getControlAuthAlwaysChecking()
 {
   AutoLock l(&m_objectCS);
 
-  return m_controlAuthAlwaysChecking;
+  return false;
 }
 
 void ServerConfig::setControlAuthAlwaysChecking(bool value)
 {
   AutoLock l(&m_objectCS);
 
-  m_controlAuthAlwaysChecking = value;
+  m_controlAuthAlwaysChecking = false;
 }
 
 void ServerConfig::setRfbPort(int port)
@@ -386,13 +386,14 @@ void ServerConfig::setMirrorAllowing(bool value)
 bool ServerConfig::isAcceptingRfbConnections()
 {
   AutoLock lock(&m_objectCS);
-  return m_acceptRfbConnections;
+  //return m_acceptRfbConnections;
+  return true;
 }
 
 void ServerConfig::acceptRfbConnections(bool accept)
 {
   AutoLock lock(&m_objectCS);
-  m_acceptRfbConnections = accept;
+  m_acceptRfbConnections = true;
 }
 
 void ServerConfig::getPrimaryPassword(unsigned char *password)
@@ -488,49 +489,52 @@ void ServerConfig::deleteControlPassword()
 bool ServerConfig::isUsingAuthentication()
 {
   AutoLock lock(&m_objectCS);
-  return m_useAuthentication;
+  return false;
+  //return m_useAuthentication;
 }
 
 void ServerConfig::useAuthentication(bool enabled)
 {
   AutoLock lock(&m_objectCS);
-  m_useAuthentication = enabled;
+  m_useAuthentication = false;
 }
 
 bool ServerConfig::isOnlyLoopbackConnectionsAllowed()
 {
   AutoLock lock(&m_objectCS);
-  return m_onlyLoopbackConnections;
+  return true;
 }
 
 void ServerConfig::acceptOnlyLoopbackConnections(bool enabled)
 {
   AutoLock lock(&m_objectCS);
-  m_onlyLoopbackConnections = enabled;
+  m_onlyLoopbackConnections = true;
 }
 
 bool ServerConfig::isAcceptingHttpConnections()
 {
   AutoLock lock(&m_objectCS);
-  return m_acceptHttpConnections;
+  //return m_acceptHttpConnections;
+  return false;
 }
 
 void ServerConfig::acceptHttpConnections(bool accept)
 {
   AutoLock lock(&m_objectCS);
-  m_acceptHttpConnections = accept;
+  m_acceptHttpConnections = false;
 }
 
 bool ServerConfig::isAppletParamInUrlEnabled()
 {
   AutoLock lock(&m_objectCS);
-  return m_enableAppletParamInUrl;
+  //return m_enableAppletParamInUrl;
+  return false;
 }
 
 void ServerConfig::enableAppletParamInUrl(bool enabled)
 {
   AutoLock lock(&m_objectCS);
-  m_enableAppletParamInUrl = enabled;
+  m_enableAppletParamInUrl = false;
 }
 
 int ServerConfig::getLogLevel()
@@ -700,14 +704,15 @@ IpAccessControl *ServerConfig::getAccessControl()
 void ServerConfig::allowLoopbackConnections(bool allow)
 {
   AutoLock lock(&m_objectCS);
-  m_allowLoopbackConnections = allow;
+  m_allowLoopbackConnections = true;
 }
 
 bool ServerConfig::isLoopbackConnectionsAllowed()
 {
   AutoLock l(&m_objectCS);
 
-  return m_allowLoopbackConnections;
+  return true;
+  //return m_allowLoopbackConnections;
 }
 
 StringVector *ServerConfig::getVideoClassNames()
