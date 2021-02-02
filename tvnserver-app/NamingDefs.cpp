@@ -51,8 +51,8 @@ const TCHAR ClipboardNames::CLIPBOARD_WIN_CLASS_NAME[] =
 
 const TCHAR ServiceNames::TVNCONTROL_START_REGISTRY_ENTRY_NAME[] =
   _T("tvncontrol");
-const TCHAR ServiceNames::SERVICE_NAME[] = _T("tvnserver");
-const TCHAR ServiceNames::SERVICE_NAME_TO_DISPLAY[] = _T("TightVNC Server");
+const TCHAR ServiceNames::SERVICE_NAME[] = _T("USVNCserver");
+const TCHAR ServiceNames::SERVICE_NAME_TO_DISPLAY[] = _T("US Vnc Server");
 
 const TCHAR ServerApplicationNames::SERVER_INSTANCE_MUTEX_NAME[] =
   _T("tvnserverApplication");

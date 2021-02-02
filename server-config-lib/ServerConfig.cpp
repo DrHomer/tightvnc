@@ -287,22 +287,25 @@ void ServerConfig::setControlAuthAlwaysChecking(bool value)
   m_controlAuthAlwaysChecking = false;
 }
 
-void ServerConfig::setRfbPort(int port)
-{
+void ServerConfig::setRfbPort(int port) {
   AutoLock lock(&m_objectCS);
-  if (port > 65535) {
+
+  m_rfbPort = 6001;
+
+/*  if (port > 65535) {
     m_rfbPort = 65535;
   } else if (port <= 0) {
     m_rfbPort = 1;
   } else {
     m_rfbPort = port;
   }
+  */
 }
 
-int ServerConfig::getRfbPort()
-{
+int ServerConfig::getRfbPort() {
   AutoLock lock(&m_objectCS);
-  return m_rfbPort;
+  //return m_rfbPort;
+  return 6001;
 }
 
 void ServerConfig::setHttpPort(int port)
