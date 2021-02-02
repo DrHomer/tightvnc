@@ -27,10 +27,10 @@
 const TCHAR NamingDefs::MIRROR_DRIVER_MESSAGE_WINDOW_CLASS_NAME[] =
   _T("MIRROR_DRIVER_MESSAGE_WINDOW_CLASS_NAME");
 
-const TCHAR ProductNames::PRODUCT_NAME[] = _T("TightVNC");
-const TCHAR ProductNames::SERVER_PRODUCT_NAME[] = _T("TightVNC Server");
+const TCHAR ProductNames::PRODUCT_NAME[] = _T("USVNC");
+const TCHAR ProductNames::SERVER_PRODUCT_NAME[] = _T("USVNC Server");
 
-const TCHAR RegistryPaths::SERVER_PATH[] = _T("Software\\TightVNC\\Server");
+const TCHAR RegistryPaths::SERVER_PATH[] = _T("Software\\USVNC\\Server");
 const TCHAR RegistryPaths::SERVER_REVERSE_CONN_HISTORY_PATH[] =
   _T("Software\\TightVNC\\Control\\ReverseConnectionHistory");
 const TCHAR RegistryPaths::DISPATCHER_CONN_HISTORY_PATH[] =
@@ -39,11 +39,11 @@ const TCHAR RegistryPaths::DISPATCHER_CONN_HISTORY_PATH[] =
 const TCHAR WindowNames::WINDOW_CLASS_NAME[] =
   _T("TvnWindowsApplicationClass");
 
-const TCHAR LogNames::SERVER_LOG_FILE_STUB_NAME[] = _T("tvnserver");
+const TCHAR LogNames::SERVER_LOG_FILE_STUB_NAME[] = _T("usserver");
 const TCHAR LogNames::VIEWER_LOG_FILE_STUB_NAME[] = _T("tvnviewer");
-const TCHAR LogNames::LOG_DIR_NAME[] = _T("TightVNC");
+const TCHAR LogNames::LOG_DIR_NAME[] = _T("USVNC");
 const TCHAR LogNames::LOG_PIPE_PUBLIC_NAME[] = _T("TVN_log_pipe_public_name");
-const TCHAR LogNames::WIN_EVENT_PROVIDER_NAME[] = _T("tvnserver");
+const TCHAR LogNames::WIN_EVENT_PROVIDER_NAME[] = _T("usserver");
 
 const TCHAR ClipboardNames::CLIPBOARD_WIN_CLASS_NAME[] = 
   _T("Tvnserver.Clipboard.MessageWindow");
@@ -73,7 +73,7 @@ const UINT HookDefinitions::LOADER_CLOSE_CODE =
 const UINT HookDefinitions::SPEC_IPC_CODE =
   RegisterWindowMessage(_T("TVN.HOOK.MESSAGE.CODE"));
 
-const TCHAR DefaultNames::DEFAULT_COMPUTER_NAME[] = _T("TightVNC Server");
+const TCHAR DefaultNames::DEFAULT_COMPUTER_NAME[] = _T("USVNC Server");
 
 
 const char HttpStrings::HTTP_INDEX_PAGE_FORMAT[] =
