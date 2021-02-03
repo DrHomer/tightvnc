@@ -90,7 +90,7 @@ int TvnServerApplication::run()
   // $AccessRule = new-object System.Security.AccessControl.RegistryAccessRule("Users", "ReadKey", "None", "None", "Allow")
   // $ACL.SetAccessRule($AccessRule)
   // $ACL | Set-Acl HKLM:\SOFTWARE\TightVNC\Server\ServiceOnly
-  RegistryKey key(HKEY_LOCAL_MACHINE, _T("SOFTWARE\\TightVNC\\Server\\ServiceOnly"), false);
+  RegistryKey key(HKEY_LOCAL_MACHINE, _T("SOFTWARE\\USVNC\\Server\\ServiceOnly"), false);
   if (key.isOpened()) {
     MessageBox(0,
       _T("Couldn't run the server in Application mode"),
