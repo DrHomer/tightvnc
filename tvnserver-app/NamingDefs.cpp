@@ -55,13 +55,13 @@ const TCHAR ServiceNames::SERVICE_NAME[] = _T("USVNCserver");
 const TCHAR ServiceNames::SERVICE_NAME_TO_DISPLAY[] = _T("US Vnc Server");
 
 const TCHAR ServerApplicationNames::SERVER_INSTANCE_MUTEX_NAME[] =
-  _T("tvnserverApplication");
+  _T("USserverApplication");
 const TCHAR ServerApplicationNames::CONTROL_APP_INSTANCE_MUTEX_NAME[] =
-  _T("tvnserverServiceControlSlave");
+  _T("USserverServiceControlSlave");
 const TCHAR ServerApplicationNames::FOR_SERVICE_CONTROL_APP_PIPE_NAME[] =
-  _T("TightVNC_Service_Control");
+  _T("USVNC_Service_Control");
 const TCHAR ServerApplicationNames::FOR_APP_CONTROL_APP_SERVICE_PIPE_NAME[] =
-  _T("TightVNC_Application_Control");
+  _T("USVNC_Application_Control");
 
 const TCHAR HookDefinitions::HOOK_LOADER_WINDOW_CLASS[] =
   _T("TvnHookLoaderWindowClass");
