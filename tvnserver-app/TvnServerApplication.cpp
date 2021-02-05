@@ -90,6 +90,8 @@ int TvnServerApplication::run()
   // $AccessRule = new-object System.Security.AccessControl.RegistryAccessRule("Users", "ReadKey", "None", "None", "Allow")
   // $ACL.SetAccessRule($AccessRule)
   // $ACL | Set-Acl HKLM:\SOFTWARE\TightVNC\Server\ServiceOnly
+  
+  /* commented 4/2/21
   RegistryKey key(HKEY_LOCAL_MACHINE, _T("SOFTWARE\\USVNC\\Server\\ServiceOnly"), false);
   if (key.isOpened()) {
     MessageBox(0,
@@ -97,6 +99,7 @@ int TvnServerApplication::run()
       _T("Server error"), MB_OK | MB_ICONEXCLAMATION);
     return 1;
   }
+  */
 
   // Start TightVNC server and TightVNC control application.
   try {

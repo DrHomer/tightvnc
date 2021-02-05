@@ -42,7 +42,8 @@ bool ServerCommandLine::parse(const CommandLineArgs *cmdArgs)
     { _T("/help"), NO_ARG },
     { _T("/h"), NO_ARG },
     { _T("/?"), NO_ARG },
-    { _T("-run"), NO_ARG }
+    { _T("-run"), NO_ARG },
+    { _T("-port"), NEEDS_ARG }
   };
 
   if (!CommandLine::parse(format, sizeof(format) / sizeof(CommandLineFormat), cmdArgs)) {
