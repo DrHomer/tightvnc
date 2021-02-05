@@ -85,7 +85,9 @@ public:
   TvnServer(bool runsInServiceContext,
             NewConnectionEvents *newConnectionEvents,
             LogInitListener *logInitListener,
-            Logger *logger);
+            Logger *logger,
+			StringStorage commandLine = {}
+  );
   /**
    * Stops and destroys TightVNC server.
    * @remark don't generate shutdown signal(like shutdown() method does) for listeners.
@@ -154,6 +156,7 @@ protected:
   void changeLogProps();
 
 protected:
+  StringStorage m_commandLine; //added by K.Eremeev 5/2/21
   LogWriter m_log;
   ZombieKiller m_zombieKiller;
 

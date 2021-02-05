@@ -58,7 +58,9 @@
 TvnServer::TvnServer(bool runsInServiceContext,
                      NewConnectionEvents *newConnectionEvents,
                      LogInitListener *logInitListener,
-                     Logger *logger)
+                     Logger *logger
+	, StringStorage commandLine
+)
 : Singleton<TvnServer>(),
   ListenerContainer<TvnServerListener *>(),
   m_runAsService(runsInServiceContext),
@@ -69,6 +71,7 @@ TvnServer::TvnServer(bool runsInServiceContext,
   m_log(logger),
   m_contextSwitchResolution(1),
   m_extraRfbServers(&m_log)
+	, m_commandLine { commandLine }
 {
   m_log.message(_T("%s Build on %s"),
                  ProductNames::SERVER_PRODUCT_NAME,
@@ -79,7 +82,7 @@ TvnServer::TvnServer(bool runsInServiceContext,
   Configurator *configurator = Configurator::getInstance();
   configurator->load();
   m_srvConfig = Configurator::getInstance()->getServerConfig();
-
+  
   try {
     StringStorage logDir;
     m_srvConfig->getLogFileDir(&logDir);

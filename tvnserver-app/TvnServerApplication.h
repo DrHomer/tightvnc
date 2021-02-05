@@ -29,6 +29,7 @@
 #include "util/winhdr.h"
 
 #include "win-system/WindowsApplication.h"
+#include "win-system/WinCommandLineArgs.h"
 
 #include "TvnServer.h"
 #include "TvnServerListener.h"
