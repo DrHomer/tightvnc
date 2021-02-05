@@ -106,7 +106,8 @@ int TvnServerApplication::run()
     m_tvnServer = new TvnServer(false
 		, m_newConnectionEvents
 		, this
-		, &m_fileLogger);
+		, &m_fileLogger
+	, m_commandLine);
     m_tvnServer->addListener(this);
     m_tvnControlRunner = new WsConfigRunner(&m_fileLogger);
 
