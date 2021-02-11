@@ -379,13 +379,17 @@ void TvnServer::restartMainRfbServer()
   // FIXME: Errors are critical here, they should not be ignored.
 
   stopMainRfbServer();
-
+  unsigned short iPort{0};
   {//try to get port //add by K.Eremeev 2/11/21
 	  ServerCommandLine parser;
 	  StringStorage port;
 	  WinCommandLineArgs cmdArgs(m_commandLine.getString());
 	  if (parser.parse(&cmdArgs)) {
 		  parser.optionSpecified(_T("-port"), &port);
+	  }
+
+	  if (port.getLength() > 0) {
+		  iPort = _ttoi(port.getString());
 	  }
   }
 
@@ -394,7 +398,11 @@ void TvnServer::restartMainRfbServer()
   }
 
   const TCHAR *bindHost = m_srvConfig->isOnlyLoopbackConnectionsAllowed() ? _T("localhost") : _T("0.0.0.0");
-  unsigned short bindPort = m_srvConfig->getRfbPort();
+  
+  unsigned short bindPort{ iPort };
+  if (0 == bindPort) {
+	  bindPort = m_srvConfig->getRfbPort();
+  }
 
   m_log.message(_T("Starting main RFB server"));
 
