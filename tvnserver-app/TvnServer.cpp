@@ -28,6 +28,9 @@
 #include "win-system/CurrentConsoleProcess.h"
 #include "win-system/Environment.h"
 
+#include "ServerCommandLine.h" //add by K.Eremeev 2/11/21
+#include "win-system/WinCommandLineArgs.h" //add by K.Eremeev 2/11/21
+
 #include "server-config-lib/Configurator.h"
 
 #include "thread/GlobalMutex.h"
@@ -376,6 +379,15 @@ void TvnServer::restartMainRfbServer()
   // FIXME: Errors are critical here, they should not be ignored.
 
   stopMainRfbServer();
+
+  {//try to get port //add by K.Eremeev 2/11/21
+	  ServerCommandLine parser;
+	  StringStorage port;
+	  WinCommandLineArgs cmdArgs(m_commandLine.getString());
+	  if (parser.parse(&cmdArgs)) {
+		  parser.optionSpecified(_T("-port"), &port);
+	  }
+  }
 
   if (!m_srvConfig->isAcceptingRfbConnections()) {
     return;
