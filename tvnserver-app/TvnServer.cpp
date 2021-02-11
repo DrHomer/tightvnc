@@ -173,8 +173,8 @@ void TvnServer::onConfigReload(ServerConfig *serverConfig)
 
     bool toggleMainRfbServer =
       m_srvConfig->isAcceptingRfbConnections() != (m_rfbServer != 0);
-    bool changeMainRfbPort = m_rfbServer != 0 &&
-      (m_srvConfig->getRfbPort() != (int)m_rfbServer->getBindPort());
+    //bool changeMainRfbPort = m_rfbServer != 0 &&
+      //(m_srvConfig->getRfbPort() != (int)m_rfbServer->getBindPort());
 
     const TCHAR *bindHost =
       m_srvConfig->isOnlyLoopbackConnectionsAllowed() ? _T("localhost") : _T("0.0.0.0");
@@ -182,7 +182,7 @@ void TvnServer::onConfigReload(ServerConfig *serverConfig)
       _tcscmp(m_rfbServer->getBindHost(), bindHost) != 0;
 
     if (toggleMainRfbServer ||
-        changeMainRfbPort ||
+        //changeMainRfbPort ||
         changeBindHost) {
       restartMainRfbServer();
     }
