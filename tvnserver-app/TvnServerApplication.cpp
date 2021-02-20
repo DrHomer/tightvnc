@@ -73,6 +73,7 @@ int TvnServerApplication::run()
 
   GlobalMutex *appInstanceMutex;
 
+  /*
   try {
     appInstanceMutex = new GlobalMutex(
       ServerApplicationNames::SERVER_INSTANCE_MUTEX_NAME, false, true);
@@ -82,6 +83,7 @@ int TvnServerApplication::run()
                StringTable::getString(IDS_MBC_TVNSERVER), MB_OK | MB_ICONEXCLAMATION);
     return 1;
   }
+  */
 
   // check the HKLM\SOFTWARE\TightVNC\Server\ has ServiceOnly subsection and exit if found
   // to create the key and set acces rights run the PS script:
